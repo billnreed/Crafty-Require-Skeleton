@@ -13,11 +13,20 @@
         <script type="text/javascript">
             require.config({
                 paths: {
-                    crafty: "../js/libs/crafty",
-                    components: "../js/components", 
-                    scenes: "../js/scenes"
+                    Crafty: "../js/libs/crafty",
+                    Components: "../js/Components", 
+                    Scenes: "../js/Scenes",
+                    Entities: "../js/Entities"
+                },
+                
+                shim: {
+                    Crafty: {
+                        exports: "Crafty"
+                    }
                 }
             }); 
+            
+            STAGE_BOUNDS = {x: 0, y: 0, w: 450, h: 700};
  
             require([], function() {
                 jasmine.getEnv().addReporter(new jasmine.HtmlReporter());

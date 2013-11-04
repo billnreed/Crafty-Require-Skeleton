@@ -1,10 +1,18 @@
 require.config({
     paths: {
-        crafty: "libs/crafty"
+        Crafty: "libs/crafty"
+    },
+    
+    shim: {
+        Crafty: {
+            exports: "Crafty"
+        }
     }
 });
 
-require(["crafty"], function(Crafty) {
-    Crafty.init(500, 500);
+STAGE_BOUNDS = {x: 0, y: 0, w: 450, h: 700};
+
+require(["Crafty"], function(Crafty) {
+    Crafty.init(STAGE_BOUNDS.w, STAGE_BOUNDS.h);
     
 });
